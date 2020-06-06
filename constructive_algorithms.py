@@ -1,3 +1,12 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
 # New Year Chaos
 def inputMinimumBribes():
     # input minimumBribes
@@ -18,7 +27,7 @@ def minimumBribes(q):
         if i < q[i] - 3:
             print("Too chaotic")
             return
-        for x in q[max(0, q[i] - 2) : i]:
+        for x in q[max(0, q[i] - 2): i]:
             if x > q[i]:
                 bribes += 1
     print(bribes)

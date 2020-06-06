@@ -1,3 +1,12 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
 def maximumToys():
     # Input maximum toys
     k = 50
