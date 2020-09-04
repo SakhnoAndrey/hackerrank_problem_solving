@@ -31,7 +31,7 @@ def sherlockAndAnagrams():
     l = len(s)
     for i in range(l):
         for j in range(i, l):
-            test = list(s[i: j + 1].strip())
+            test = list(s[i : j + 1].strip())
             test.sort()
             sort = "".join(test)
             if sort in dict:
