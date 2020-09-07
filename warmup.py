@@ -101,4 +101,15 @@ def mini_max_sum():
     print(s - mx, s - mn)
 
 
-mini_max_sum()
+# Birthday Cake Candles
+def birthday_cake_candles():
+    # Input
+    candles_count = int(input().strip())
+    candles = list(map(int, input().rstrip().split()))
+
+    # Function
+    result = candles.count(max(candles))
+    print(result)
+
+
+birthday_cake_candles()
