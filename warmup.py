@@ -66,4 +66,17 @@ def diagonal_difference():
     print(s)
 
 
-diagonal_difference()
+# Plus Minus
+def plus_minus():
+    # Input
+    n = int(input())
+    arr = list(map(int, input().strip().split()))
+
+    # Function
+    positive = sum(x > 0 for x in arr) / len(arr)
+    negative = sum(x < 0 for x in arr) / len(arr)
+    zero = sum(x == 0 for x in arr) / len(arr)
+    print(round(positive, 6), round(negative, 6), round(zero, 6), sep="\n")
+
+
+plus_minus()
