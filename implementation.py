@@ -89,4 +89,19 @@ def grading_studets():
     print(result, sep="\n")
 
 
-grading_studets()
+# Apple and Orange
+def apple_orange():
+    # Input
+    s, t = map(int, input().strip().split())
+    a, b = map(int, input().strip().split())
+    m, n = map(int, input().strip().split())
+    apples = list(map(int, input().rstrip().split()))
+    oranges = list(map(int, input().rstrip().split()))
+
+    # Function
+    count_apple = sum(s <= a + el <= t for el in apples)
+    count_orange = sum(s <= b + el <= t for el in oranges)
+    print(count_apple, count_orange, sep="\n")
+
+
+apple_orange()
