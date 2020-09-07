@@ -75,4 +75,18 @@ def jumpingOnClouds():
     return min_num
 
 
-jumpingOnClouds()
+# Grading Students
+def grading_studets():
+    # Input
+    grades_count = int(input().strip())
+    grades = []
+    for _ in range(grades_count):
+        grades_item = int(input().strip())
+        grades.append(grades_item)
+
+    # Function
+    result = [i if (i < 38) or (i % 5 < 3) else (i + 5 - i % 5) for i in grades]
+    print(result, sep="\n")
+
+
+grading_studets()
