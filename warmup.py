@@ -112,4 +112,17 @@ def birthday_cake_candles():
     print(result)
 
 
-birthday_cake_candles()
+# Time Conversion
+def time_conversion():
+    # Input
+    time = input()
+
+    # Function
+    h, m, s = map(int, time[:-2].split(":"))
+    p = time[-2:]
+    h = h % 12 + (p.upper() == "PM") * 12
+    result = "{0:02}:{1:02}:{2:02}".format(h, m, s)
+    print(result)
+
+
+time_conversion()
