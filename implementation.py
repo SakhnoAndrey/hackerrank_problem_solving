@@ -104,4 +104,20 @@ def apple_orange():
     print(count_apple, count_orange, sep="\n")
 
 
-apple_orange()
+# Kangaroo
+def kangaroo():
+    # Input
+    x1, v1, x2, v2 = map(int, input().strip().split())
+
+    # Function
+    if x1 == x2 and v1 == v2:
+        result = "YES"
+    elif x1 == x2 or v1 == v2:
+        result = "NO"
+    elif (x2 - x1) % (v1 - v2) == 0 and (x2 - x1) / (v1 - v2) >= 0:
+        result = "YES"
+    else:
+        result = "NO"
+
+
+kangaroo()
