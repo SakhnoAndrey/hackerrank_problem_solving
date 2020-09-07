@@ -79,4 +79,14 @@ def plus_minus():
     print(round(positive, 6), round(negative, 6), round(zero, 6), sep="\n")
 
 
-plus_minus()
+# Staircase
+def staircase():
+    # Input
+    n = int(input())
+
+    # Function
+    for i in range(n):
+        print(" " * (n - 1 - i) + "#" * (i + 1))
+
+
+staircase()
