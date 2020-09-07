@@ -49,4 +49,21 @@ def very_big_sum():
     print(s)
 
 
-very_big_sum()
+# Diagonal Difference
+def diagonal_difference():
+    # Input
+    n = int(input())
+    arr = []
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    # Function
+    s = 0
+    size = len(arr)
+    for i in range(size):
+        s += arr[i][i] - arr[i][size - 1 - i]
+    s = abs(s)
+    print(s)
+
+
+diagonal_difference()
