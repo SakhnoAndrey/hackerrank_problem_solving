@@ -89,4 +89,16 @@ def staircase():
         print(" " * (n - 1 - i) + "#" * (i + 1))
 
 
-staircase()
+# Mini-Max Sum
+def mini_max_sum():
+    # Input
+    arr = list(map(int, input().rstrip().split()))
+
+    # Function
+    s = sum(arr)
+    mn = min(arr)
+    mx = max(arr)
+    print(s - mx, s - mn)
+
+
+mini_max_sum()
