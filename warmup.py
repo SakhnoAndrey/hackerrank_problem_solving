@@ -36,4 +36,17 @@ def compare_triplets():
     print(" ".join(map(str, score)))
 
 
-compare_triplets()
+# A very big sum
+def very_big_sum():
+    # Input
+    ar_count = int(input())
+    ar = list(map(int, input().rstrip().split()))
+
+    # Function
+    s = 0
+    for el in ar:
+        s += el
+    print(s)
+
+
+very_big_sum()
