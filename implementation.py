@@ -139,4 +139,23 @@ def between_two_sets():
     print(count)
 
 
+# Breaking the Records
+def breaking_records():
+    # Input
+    n = int(input())
+    scores = list(map(int, input().rstrip().split()))
+
+    # Function
+    min_score = max_score = scores[0]
+    times = [0, 0]
+    for elem in scores:
+        if elem < min_score:
+            min_score = elem
+            times[1] += 1
+        if elem > max_score:
+            max_score = elem
+            times[0] += 1
+    print(" ".join(map(str, times)))
+
+
 between_two_sets()
