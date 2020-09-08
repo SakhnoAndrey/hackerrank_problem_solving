@@ -120,4 +120,23 @@ def kangaroo():
         result = "NO"
 
 
-kangaroo()
+# Between Two Sets
+def between_two_sets():
+    # Input
+    n, m = map(int, input().strip().split())
+    a = list(map(int, input().rstrip().split()))
+    b = list(map(int, input().rstrip().split()))
+
+    # Function
+    max_a = max(a)
+    min_b = min(b)
+    count = 0
+    for elem in range(max_a, min_b + 1):
+        res_a = all(elem % el == 0 for el in a)
+        res_b = all(el % elem == 0 for el in b)
+        print(res_a, res_b)
+        count += res_a * res_b
+    print(count)
+
+
+between_two_sets()
