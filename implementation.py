@@ -170,4 +170,18 @@ def birthday_chocolate():
     print(quantity)
 
 
-birthday_chocolate()
+# Divisible Sum Pairs
+def divisible_sum_pairs():
+    # Input
+    n, k = map(int, input().rstrip().split())
+    ar = list(map(int, input().rstrip().split()))
+
+    # Function
+    quantity = sum(
+        sum((ar[i] + el) % k == 0 for el in ar[i + 1 :]) for i in range(n - 1)
+    )
+    print(quantity)
+    # quantity += sum((ar[i] + el) % k == 0 for el in ar[i+1:])
+
+
+divisible_sum_pairs()
