@@ -158,4 +158,16 @@ def breaking_records():
     print(" ".join(map(str, times)))
 
 
-between_two_sets()
+# Birthday Chocolate
+def birthday_chocolate():
+    # Input
+    n = int(input())
+    s = list(map(int, input().rstrip().split()))
+    d, m = map(int, input().rstrip().split())
+
+    # Function
+    quantity = sum([sum(s[i : i + m]) == d for i in range(n - m + 1)])
+    print(quantity)
+
+
+birthday_chocolate()
