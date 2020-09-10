@@ -181,7 +181,17 @@ def divisible_sum_pairs():
         sum((ar[i] + el) % k == 0 for el in ar[i + 1 :]) for i in range(n - 1)
     )
     print(quantity)
-    # quantity += sum((ar[i] + el) % k == 0 for el in ar[i+1:])
 
 
-divisible_sum_pairs()
+# Migratory birds
+def migratory_birds():
+    # Input
+    arr_count = int(input().strip())
+    arr = list(map(int, input().rstrip().split()))
+
+    # Function
+    result = sorted(reversed(list(set(arr))), key=arr.count)[-1]
+    print(result)
+
+
+migratory_birds()
