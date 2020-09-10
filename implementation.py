@@ -230,4 +230,14 @@ def bon_appetit():
     print(result)
 
 
-bon_appetit()
+# Drawing book
+def drawing_book():
+    # Input
+    n, p = int(input()), int(input())
+
+    # Function
+    result = min(p // 2, n // 2 - p // 2)
+    print(result)
+
+
+drawing_book()
