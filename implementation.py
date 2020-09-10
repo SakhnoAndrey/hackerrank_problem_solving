@@ -194,4 +194,24 @@ def migratory_birds():
     print(result)
 
 
-migratory_birds()
+# Day of programmer
+def day_programmer():
+    # Input
+    year = int(input())
+
+    # Function
+    mon7_days = 215  # amount 7 months' days
+    if year == 1918:
+        feb_days = 15
+    elif year < 1918:  # julian year
+        feb_days = 29 if year % 4 == 0 else 28
+    else:
+        feb_days = (
+            29 if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0) else 28
+        )
+    day = 256 - mon7_days - feb_days
+    result = "{0:02}.09.{1}".format(day, year)
+    print(result)
+
+
+day_programmer()
