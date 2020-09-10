@@ -214,4 +214,20 @@ def day_programmer():
     print(result)
 
 
-day_programmer()
+# Bon appetit
+def bon_appetit():
+    # Input
+    n, k = map(int, input().rstrip().split())
+    bill = list(map(int, input().rstrip().split()))
+    b = int(input().rstrip())
+
+    # Function
+    result = (
+        "Bon Appetit"
+        if (sum(bill) - bill[k]) // 2 == b
+        else b - (sum(bill) - bill[k]) // 2
+    )
+    print(result)
+
+
+bon_appetit()
