@@ -240,4 +240,16 @@ def drawing_book():
     print(result)
 
 
-drawing_book()
+# Electronics Shop
+def electronics_shop():
+    # Input
+    b, n, m = map(int, input().rstrip().split())
+    keyboards = list(map(int, input().rstrip().split()))
+    drives = list(map(int, input().rstrip().split()))
+
+    # Function
+    result = max([x + y if x + y <= b else -1 for x in keyboards for y in drives])
+    print(result)
+
+
+electronics_shop()
