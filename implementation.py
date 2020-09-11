@@ -5,6 +5,7 @@ import os
 import random
 import re
 import sys
+import copy
 
 
 # Complete the sockMerchant function below.
@@ -269,4 +270,45 @@ def cats_mouse():
         print(result)
 
 
-electronics_shop()
+# Forming a magic square
+# generete the magic square
+def gen_square(direction):
+    ms = [[0] * 3 for i in range(3)]
+    ms[1][1] = 5
+    even = [2, 4, 6, 8]
+    i = 0
+    result = []
+    for num in even:
+        tmp = copy.deepcopy(ms)
+        tmp[0][0] = num
+        tmp[2][2] = 10 - tmp[0][0]
+        can = even[(i + direction) % len(even)]
+        if tmp[2][2] == can:
+            can = even[(i + direction * 2) % len(even)]
+        tmp[0][2] = can
+        tmp[2][0] = 10 - tmp[0][2]
+        tmp[0][1] = 15 - tmp[0][0] - tmp[0][2]
+        tmp[1][0] = 15 - tmp[0][0] - tmp[2][0]
+        tmp[1][2] = 10 - tmp[1][0]
+        tmp[2][1] = 10 - tmp[0][1]
+        i += 1
+        result.append(tmp)
+    return result
+
+
+# Complete the formingMagicSquare function below.
+def forming_magic_square(s):
+    ms1 = gen_square(1)
+    ms2 = gen_square(-1)
+    ms = ms1 + ms2
+    totals = []
+    for m in ms:
+        total = 0
+        for m_row, s_row in zip(m, s):
+            for i, j in zip(m_row, s_row):
+                total += abs(i - j)
+        totals.append(total)
+    return min(totals)
+
+
+forming_magic_square()
