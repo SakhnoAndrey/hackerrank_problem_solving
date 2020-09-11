@@ -252,4 +252,21 @@ def electronics_shop():
     print(result)
 
 
+# Cats and mouse
+def cats_mouse():
+    # Input
+    q = int(input())
+
+    # Function
+    for _ in range(q):
+        x, y, z = map(int, input().rstrip().split())
+        if abs(x - z) == abs(y - z):
+            result = "Mouse C"
+        elif abs(x - z) < abs(y - z):
+            result = "Cat A"
+        else:
+            result = "Cat B"
+        print(result)
+
+
 electronics_shop()
