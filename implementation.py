@@ -324,4 +324,24 @@ def picking_numbers():
     print(length_picking_numbers)
 
 
-picking_numbers()
+# Climbing the Leaderboard
+def climbing_leaderboard():
+    # Input
+    n = int(input())
+    ranked = list(map(int, input().rstrip().split()))
+    m = int(input())
+    player = list(map(int, input().rstrip().split()))
+
+    # Function
+    scores_set = list(set(ranked))
+    scores_set.sort(reverse=True)
+    result = []
+    l = len(scores_set)
+    for s in player:
+        while (l > 0) and (s >= scores_set[l - 1]):
+            l -= 1
+        result.append(l + 1)
+    print("\n".join(map(str, result)))
+
+
+climbing_leaderboard()
