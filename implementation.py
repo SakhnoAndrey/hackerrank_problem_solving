@@ -311,4 +311,17 @@ def forming_magic_square(s):
     return min(totals)
 
 
-forming_magic_square()
+# Picking Numbers
+def picking_numbers():
+    # Input
+    n = int(input())
+    a = list(map(int, input().rstrip().split()))
+
+    # Function
+    length_picking_numbers = max(
+        [len(list(filter(lambda x: x == num or x == num + 1, a))) for num in set(a)]
+    )
+    print(length_picking_numbers)
+
+
+picking_numbers()
