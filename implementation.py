@@ -395,4 +395,16 @@ def angry_professor():
         print(result)
 
 
-angry_professor()
+# Beautiful days at the movies
+def beautiful_days_movies():
+    # Input
+    i, j, k = map(int, input().rstrip().split())
+
+    # Function
+    result = sum(
+        list(map(lambda x: abs(x - int(str(x)[::-1])) % k == 0, range(i, j + 1, 1)))
+    )
+    print(result)
+
+
+beautiful_days_movies()
