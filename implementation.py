@@ -382,4 +382,17 @@ def utopian_tree():
         print(result)
 
 
-utopian_tree()
+# Angry professor
+def angry_professor():
+    # Input
+    t = int(input())
+    for t_itr in range(t):
+        n, k = map(int, input().rstrip().split())
+        a = list(map(int, input().rstrip().split()))
+        # Function
+        result = "YES" if n - sum(el > 0 for el in a) < k else "NO"
+        # End function
+        print(result)
+
+
+angry_professor()
