@@ -355,4 +355,15 @@ def hurdle_race():
     print(result)
 
 
-hurdle_race()
+# Designer pdf viewer
+def designer_pdf_viewer():
+    # Input
+    h = list(map(int, input().rstrip().split()))
+    word = str(input().rstrip())
+
+    # Function
+    result = max(list(map(lambda x: h[ord(x) - 97], word))) * len(word)
+    print(result)
+
+
+designer_pdf_viewer()
