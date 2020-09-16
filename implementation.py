@@ -366,4 +366,20 @@ def designer_pdf_viewer():
     print(result)
 
 
-designer_pdf_viewer()
+# Utopian tree
+def utopian_tree():
+    # Input
+    t = int(input())
+
+    for _ in range(t):
+        n = int(input())
+        # Function
+        h = 1
+        for i in range(n):
+            h = (h * 2) if i % 2 == 0 else h + 1
+        result = h
+        # End function
+        print(result)
+
+
+utopian_tree()
