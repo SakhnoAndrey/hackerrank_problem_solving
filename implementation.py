@@ -344,4 +344,15 @@ def climbing_leaderboard():
     print("\n".join(map(str, result)))
 
 
-climbing_leaderboard()
+# The hurdle race
+def hurdle_race():
+    # Input
+    n, k = map(int, input().rstrip().split())
+    height = list(map(int, input().rstrip().split()))
+
+    # Function
+    result = max(height) - k if max(height) - k > 0 else 0
+    print(result)
+
+
+hurdle_race()
