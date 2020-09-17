@@ -483,4 +483,16 @@ def find_digits():
         # End function
 
 
-find_digits()
+# Extra long factorials
+def extra_long_factorials():
+    # Input
+    n = int(input())
+
+    # Function
+    factorial = 1
+    for i in range(1, n + 1):
+        factorial *= i
+    print(factorial)
+
+
+extra_long_factorials()
