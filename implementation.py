@@ -442,4 +442,17 @@ def circular_array_rotation():
     print("\n".join(map(str, result)))
 
 
-circular_array_rotation()
+# Sequence equation
+def sequence_equation():
+    # Input
+    n = int(input())
+    p = list(map(int, input().rstrip().split()))
+
+    # Function
+    result = []
+    for i in range(n):
+        result.append(p.index(p.index(i + 1) + 1) + 1)
+    print("\n".join(map(str, result)))
+
+
+sequence_equation()
