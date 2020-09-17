@@ -419,4 +419,15 @@ def viral_advertising():
     print(m)
 
 
-viral_advertising()
+# Save the prisoner
+def save_prisoner():
+    # Input
+    t = int(input())
+    for _ in range(t):
+        n, m, s = map(int, input().rstrip().split())
+        # Function
+        result = (s - 1 + m - 1) % n + 1
+        print(result)
+
+
+save_prisoner()
