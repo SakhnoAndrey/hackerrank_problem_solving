@@ -407,4 +407,16 @@ def beautiful_days_movies():
     print(result)
 
 
-beautiful_days_movies()
+# Viral advertising
+def viral_advertising():
+    # Input
+    n = int(input())
+
+    # Function
+    m = [2]
+    for i in range(n - 1):
+        m.append(int(3 * m[i] / 2))
+    print(m)
+
+
+viral_advertising()
