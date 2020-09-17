@@ -471,4 +471,16 @@ def jumping_clouds_revisited():
     print(e)
 
 
-jumping_clouds_revisited()
+# Find digits
+def find_digits():
+    # Input
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        # Function
+        result = sum(a != "0" and n % int(a) == 0 for a in str(n))
+        print(result)
+        # End function
+
+
+find_digits()
