@@ -455,4 +455,20 @@ def sequence_equation():
     print("\n".join(map(str, result)))
 
 
-sequence_equation()
+# Jumping on the clouds: revisited
+def jumping_clouds_revisited():
+    # Input
+    n, k = map(int, input().rstrip().split())
+    c = list(map(int, input().rstrip().split()))
+
+    # Function
+    e = 100
+    i = k % n
+    e -= 1 + c[i] * 2
+    while i != 0:
+        i = (i + k) % n
+        e -= 1 + c[i] * 2
+    print(e)
+
+
+jumping_clouds_revisited()
