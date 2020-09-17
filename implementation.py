@@ -430,4 +430,16 @@ def save_prisoner():
         print(result)
 
 
-save_prisoner()
+# Circular array rotation
+def circular_array_rotation():
+    # Input
+    n, k, q = map(int, input().rstrip().split())
+    a = list(map(int, input().rstrip().split()))
+    queries = [int(input()) for _ in range(q)]
+
+    # Function
+    result = [a[i - k % n] for i in queries]
+    print("\n".join(map(str, result)))
+
+
+circular_array_rotation()
