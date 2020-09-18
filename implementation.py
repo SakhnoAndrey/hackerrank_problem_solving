@@ -523,4 +523,16 @@ def append_delete():
     print(result)
 
 
-append_delete()
+# Sherlock and Squares
+def sherlock_squares():
+    # Input
+    q = int(input())
+    for _ in range(q):
+        a, b = map(int, input().rstrip().split())
+        a = math.ceil(a ** 0.5)
+        b = math.floor(b ** 0.5)
+        result = b - a + 1
+        print(result)
+
+
+sherlock_squares()
