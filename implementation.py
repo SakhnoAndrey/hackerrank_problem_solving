@@ -535,4 +535,22 @@ def sherlock_squares():
         print(result)
 
 
-sherlock_squares()
+# Library Fine
+def library_fine():
+    # Input
+    d1, m1, y1 = map(int, input().rstrip().split())
+    d2, m2, y2 = map(int, input().rstrip().split())
+
+    # Function
+    if y1 > y2:
+        result = 10000
+    elif y1 == y2 and m1 > m2:
+        result = 500 * (m1 - m2)
+    elif y1 == y2 and m1 == m2 and d1 > d2:
+        result = 15 * (d1 - d2)
+    else:
+        result = 0
+    print(result)
+
+
+library_fine()
