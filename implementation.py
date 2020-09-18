@@ -495,4 +495,32 @@ def extra_long_factorials():
     print(factorial)
 
 
-extra_long_factorials()
+# Append and delete
+def append_delete():
+    # Input
+    s = input()
+    t = input()
+    k = int(input())
+
+    # Function
+    len_s = len(s)
+    len_t = len(t)
+    num_same_char = 0
+    for x, y in zip(s, t):
+        if x == y:
+            num_same_char += 1
+        else:
+            break
+    extra_s = len_s - num_same_char
+    extra_t = len_t - num_same_char
+    diff = extra_s + extra_t
+    if len_s + len_t < k:
+        result = "Yes"
+    elif extra_s + extra_t <= k and (extra_s + extra_t - k) % 2 == 0:
+        result = "Yes"
+    else:
+        result = "No"
+    print(result)
+
+
+append_delete()
