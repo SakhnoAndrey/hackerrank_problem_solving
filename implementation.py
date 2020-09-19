@@ -586,4 +586,15 @@ def non_div_subset():
     print(max_n)
 
 
-non_div_subset()
+# Equalize the Array
+def equalize_array():
+    # Input
+    n = int(input())
+    arr = list(map(int, input().rstrip().split()))
+
+    # Function
+    result = n - max([arr.count(e) for e in set(arr)])
+    print(result)
+
+
+equalize_array()
