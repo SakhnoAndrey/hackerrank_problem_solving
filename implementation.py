@@ -567,4 +567,23 @@ def cut_sticks():
     print(result)
 
 
-cut_sticks()
+# Non-divisible subset
+def non_div_subset():
+    # Input
+    n, k = map(int, input().rstrip().split())
+    s = list(map(int, input().rstrip().split()))
+
+    # Function
+    rest = [0 for _ in range(k)]
+    for i in s:
+        rest[i % k] += 1
+    max_n = 1 if rest[0] > 0 else 0
+    for i in range(1, k // 2 + 1):
+        if i != k - i:
+            max_n += max(rest[i], rest[k - i])
+        else:
+            max_n += 1
+    print(max_n)
+
+
+non_div_subset()
