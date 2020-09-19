@@ -553,4 +553,18 @@ def library_fine():
     print(result)
 
 
-library_fine()
+# Cut the sticks
+def cut_sticks():
+    # Input
+    n = int(input())
+    arr = list(map(int, input().rstrip().split()))
+
+    # Function
+    result = []
+    for x in sorted(set(arr)):
+        result.append(n)
+        n -= arr.count(x)
+    print(result)
+
+
+cut_sticks()
