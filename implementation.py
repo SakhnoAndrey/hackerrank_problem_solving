@@ -671,4 +671,18 @@ def taum_bday():
         print(result)
 
 
-taum_bday()
+# Organizing containers of balls
+def organizer_container_balls():
+    # Input
+    for _ in range(int(input())):
+        container = [
+            list(map(int, input().rstrip().split())) for _ in range(int(input()))
+        ]
+        # Function
+        r = sorted([sum(x) for x in container])
+        c = sorted([sum(x) for x in zip(*container)])
+        result = "Possible" if r == c else "Impossible"
+        print(result)
+
+
+organizer_container_balls()
