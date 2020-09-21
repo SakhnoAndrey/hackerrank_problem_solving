@@ -642,4 +642,20 @@ def queen_attack_2():
     print(result)
 
 
-queen_attack_2()
+# ACM ICPC Team
+def acm_icpc_team():
+    # Input
+    n, m = map(int, input().rstrip().split())
+    topic = [input() for _ in range(n)]
+
+    # Function
+    quantities = []
+    for i in range(n - 1):
+        for j in range(i + 1, n):
+            x = str(int(topic[i]) + int(topic[j]))
+            quantities.append(len(x) - x.count("0"))
+    result = max(quantities), quantities.count(max(quantities))
+    print("\n".join(map(str, result)))
+
+
+acm_icpc_team()
