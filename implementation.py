@@ -597,4 +597,49 @@ def equalize_array():
     print(result)
 
 
-equalize_array()
+# Queen's attack II
+def queen_attack_2():
+    # Input
+    n, k = map(int, input().rstrip().split())
+    rq, cq = map(int, input().rstrip().split())  # row and col for queen
+    obstacles = []
+    for _ in range(k):
+        obstacles.append(list(map(int, input().rstrip().split())))
+
+    # Function
+    max_attacks = [
+        min(rq - 1, cq - 1),
+        cq - 1,
+        min(n - rq, cq - 1),
+        n - rq,
+        min(n - rq, n - cq),
+        n - cq,
+        min(rq - 1, n - cq),
+        rq - 1,
+    ]
+    for ro, co in obstacles:
+        if ro - rq == co - cq:
+            if ro < rq:
+                max_attacks[0] = min(max_attacks[0], rq - ro - 1)
+            else:
+                max_attacks[4] = min(max_attacks[4], ro - rq - 1)
+        elif ro == rq:
+            if co < cq:
+                max_attacks[1] = min(max_attacks[1], cq - co - 1)
+            else:
+                max_attacks[5] = min(max_attacks[5], co - cq - 1)
+        elif ro - rq == cq - co:
+            if co < cq:
+                max_attacks[2] = min(max_attacks[2], cq - co - 1)
+            else:
+                max_attacks[6] = min(max_attacks[6], co - cq - 1)
+        elif co == cq:
+            if rq < ro:
+                max_attacks[3] = min(max_attacks[3], ro - rq - 1)
+            else:
+                max_attacks[7] = min(max_attacks[7], rq - ro - 1)
+    result = sum(max_attacks)
+    print(result)
+
+
+queen_attack_2()
