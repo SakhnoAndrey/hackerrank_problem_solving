@@ -658,4 +658,17 @@ def acm_icpc_team():
     print("\n".join(map(str, result)))
 
 
-acm_icpc_team()
+# Taum and B'day
+def taum_bday():
+    # Input
+    t = int(input())
+    for _ in range(t):
+        b, w = map(int, input().rstrip().split())
+        bc, wc, z = map(int, input().rstrip().split())
+        # Function
+        result = b * min(bc, wc + z) + w * min(wc, bc + z)
+        # End function
+        print(result)
+
+
+taum_bday()
