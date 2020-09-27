@@ -685,4 +685,21 @@ def organizer_container_balls():
         print(result)
 
 
-organizer_container_balls()
+# Encryption
+def encryption():
+    # Input
+    s = input()
+
+    # Function
+    s = s.replace(" ", "")
+    qr = math.floor(len(s) ** 0.5)
+    qc = math.ceil(len(s) ** 0.5)
+    if qr * qc < len(s):
+        qr += 1
+    result = ""
+    for i in range(qc):
+        result += s[i::qc] + " "
+    print(result)
+
+
+encryption()
