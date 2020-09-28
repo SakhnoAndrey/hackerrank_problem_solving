@@ -728,4 +728,22 @@ def bigger_greater():
         print(s)
 
 
-bigger_greater()
+# Modified Kaprekar Numbers
+def kaprekar_numbers():
+    # Input
+    p = int(input())
+    q = int(input())
+
+    # Function
+    arr = []
+    for i in range(p, q + 1):
+        s = str(i ** 2)
+        if len(s) == 1:
+            s = "0" + s
+        if int(s[: math.floor(len(s) / 2)]) + int(s[-math.ceil(len(s) / 2) :]) == i:
+            arr.append(i)
+    result = "INVALID RANGE" if arr == [] else " ".join(map(str, arr))
+    print(result)
+
+
+kaprekar_numbers()
