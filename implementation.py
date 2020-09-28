@@ -757,4 +757,20 @@ def beautiful_triplets():
     print(result)
 
 
-beautiful_triplets()
+# Minimum distances
+def min_distances():
+    # Input
+    n = int(input())
+    a = list(map(int, input().rstrip().split()))
+
+    # Function
+    arr = []
+    for i in range(n - 1):
+        for j in range(i + 1, n):
+            if a[i] == a[j]:
+                arr.append(j - i)
+    result = min(arr) if len(arr) > 0 else -1
+    print(result)
+
+
+min_distances()
