@@ -702,4 +702,30 @@ def encryption():
     print(result)
 
 
-encryption()
+# Bigger is Greater
+def bigger_is_greater(w):
+    word = list(w)
+    p = len(w) - 2
+    while p >= 0 and word[p] >= word[p + 1]:
+        p -= 1
+    print(p)
+    if p == -1:
+        return "no answer"
+    for i in range(len(word) - 1, p, -1):
+        if word[i] > word[p]:
+            word[i], word[p] = word[p], word[i]
+            break
+    word[p + 1 :] = reversed(word[p + 1 :])
+    return "".join(word) if "".join(word) != w else "no answer"
+
+
+def bigger_greater():
+    # Input
+    for _ in range(int(input())):
+        w = input()
+        # Function
+        s = bigger_is_greater(w)
+        print(s)
+
+
+bigger_greater()
