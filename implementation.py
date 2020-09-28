@@ -773,4 +773,20 @@ def min_distances():
     print(result)
 
 
-min_distances()
+# Halloween Sale
+def halloween_sale():
+    # Input
+    p, d, m, s = map(int, input().rstrip().split())
+
+    # Function
+    result = 0
+    while s >= p:
+        s -= p
+        result += 1
+        p -= d
+        if p < m:
+            p = m
+    print(result)
+
+
+halloween_sale()
