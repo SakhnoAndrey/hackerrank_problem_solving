@@ -746,4 +746,15 @@ def kaprekar_numbers():
     print(result)
 
 
-kaprekar_numbers()
+# Beautiful triplets
+def beautiful_triplets():
+    # Input
+    n, d = map(int, input().rstrip().split())
+    arr = list(map(int, input().rstrip().split()))
+
+    # Function
+    result = sum(a + d in arr and a + d + d in arr for a in arr)
+    print(result)
+
+
+beautiful_triplets()
