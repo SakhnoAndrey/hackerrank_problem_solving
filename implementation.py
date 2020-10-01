@@ -789,4 +789,88 @@ def halloween_sale():
     print(result)
 
 
-halloween_sale()
+# The time in words
+def time_in_words():
+    # Input
+    h = int(input())
+    m = int(input())
+
+    # Function
+    hours = [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen",
+        "twenty",
+        "twenty one",
+        "twenty two",
+        "twenty three",
+    ]
+    minutes = [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen",
+        "twenty",
+        "twenty one",
+        "twenty two",
+        "twenty three",
+        "twenty four",
+        "twenty five",
+        "twenty six",
+        "twenty seven",
+        "twenty eight",
+        "twenty nine",
+    ]
+    result = ""
+
+    if m == 0:
+        result = hours[h] + " o' clock"
+    elif m % 30 == 0:
+        result = "half past " + hours[h]
+    elif m % 15 == 0:
+        result = "quarter "
+        result += ("past " + hours[h]) if m < 30 else ("to " + hours[h + 1])
+    else:
+        result = "{0} minute{1} {2} {3}".format(
+            minutes[m if m < 30 else (60 - m)],
+            "" if m == 1 else "s",
+            "past" if m < 30 else "to",
+            hours[h] if m < 30 else hours[h + 1],
+        )
+    print(result)
+
+
+time_in_words()
