@@ -899,8 +899,8 @@ def matrix_layer_rotation():
     m, n, r = map(int, input().rstrip().split())
     matrix = []
     for _ in range(m):
-        matrix.append(list(map(int, input().rstrip().split())))
-
+        matrix.append(list(map(int, input().rstrip().split()))[:n])
+    print(matrix)
     # Function
     """
     need_rotation = m % 2 != 0
