@@ -6,6 +6,7 @@ import random
 import re
 import sys
 import copy
+import numpy as np
 
 
 # Complete the sockMerchant function below.
@@ -873,4 +874,79 @@ def time_in_words():
     print(result)
 
 
-time_in_words()
+# Chocolate Feast
+def chocolate_feast():
+    # Input
+    t = int(input())
+    for _ in range(t):
+        n, c, m = map(int, input().rstrip().split())
+        # Function
+        w = 0
+        k = 0
+        while (n + w // m) // c > 0:
+            n_whole, n_frac = n // c, n % c
+            w += n_whole
+            n = n_frac
+            k += n_whole
+            print(w, n, k)
+
+
+# Matrix layer rotation
+
+
+def matrix_layer_rotation():
+    # Input
+    m, n, r = map(int, input().rstrip().split())
+    matrix = []
+    for _ in range(m):
+        matrix.append(list(map(int, input().rstrip().split())))
+
+    # Function
+    """
+    need_rotation = m % 2 != 0
+    if need_rotation:
+        matrix = list(zip(*matrix))[::-1]
+    print_matrix2D(matrix)
+    for _ in range(len(matrix) // 2):
+        for i in range()
+    if need_rotation:
+        matrix = list(zip(*matrix[::-1]))
+    print_matrix2D(matrix)
+    """
+    # Passing all rings of rotation
+    for z in range(min(m, n) // 2):
+        # Loading elements of a ring of revolution into a one-dimensional list
+        lst_straight = []
+        lst_reverse = []
+        for i in range(m - z * 2):
+            for j in range(n - z * 2):
+                if i == 0:
+                    lst_straight.append(matrix[i + z][j + z])
+                elif i == m - z * 2 - 1:
+                    lst_reverse.append(matrix[i + z][j + z])
+                elif j == n - z * 2 - 1:
+                    lst_straight.append(matrix[i + z][j + z])
+                elif j == 0:
+                    lst_reverse.append(matrix[i + z][j + z])
+        lst = lst_straight + list(reversed(lst_reverse))
+        # Shift elements of the ring of rotation by r positions counterclockwise
+        lst = lst[r % len(lst) :] + lst[: r % len(lst)]
+        # Backloading shifted elements from a rotation ring into a 2D array
+        lst_straight = lst[: len(lst) // 2]
+        lst_reverse = list(reversed(lst[len(lst) // 2 :]))
+        for i in range(m - z * 2):
+            for j in range(n - z * 2):
+                if i == 0:
+                    matrix[i + z][j + z] = lst_straight.pop(0)
+                elif i == m - z * 2 - 1:
+                    matrix[i + z][j + z] = lst_reverse.pop(0)
+                elif j == n - z * 2 - 1:
+                    matrix[i + z][j + z] = lst_straight.pop(0)
+                elif j == 0:
+                    matrix[i + z][j + z] = lst_reverse.pop(0)
+    # Print matrix 2D
+    for elem in matrix:
+        print(" ".join(map(str, elem)))
+
+
+matrix_layer_rotation()
