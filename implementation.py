@@ -881,19 +881,15 @@ def chocolate_feast():
     for _ in range(t):
         n, c, m = map(int, input().rstrip().split())
         # Function
-        w = 0
-        k = 0
-        while (n + w // m) // c > 0:
-            n_whole, n_frac = n // c, n % c
-            w += n_whole
-            n = n_frac
-            k += n_whole
-            print(w, n, k)
+        w = n // c
+        k = w
+        while w // m > 0:
+            k += w // m
+            w = w // m + w % m
+        print(k)
 
 
 # Matrix layer rotation
-
-
 def matrix_layer_rotation():
     # Input
     m, n, r = map(int, input().rstrip().split())
@@ -949,4 +945,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-matrix_layer_rotation()
+chocolate_feast()
