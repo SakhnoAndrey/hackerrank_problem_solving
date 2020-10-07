@@ -889,9 +889,24 @@ def chocolate_feast():
         print(k)
 
 
+# Service Lane
+def service_lane():
+    # Input
+    n, t = map(int, input().rstrip().split())
+    width = list(map(int, input().rstrip().split()))
+    cases = []
+    for _ in range(t):
+        cases.append(list(map(int, input().rstrip().split())))
+
+    # Function
+    result = [min(width[i : j + 1]) for i, j in cases]
+    # End function
+    print("\n".join(map(str, result)))
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
-    # Input
+    # Inputhac
     m, n, r = map(int, input().rstrip().split())
     matrix = []
     for _ in range(m):
@@ -945,4 +960,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-chocolate_feast()
+service_lane()
