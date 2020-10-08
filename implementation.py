@@ -904,6 +904,24 @@ def service_lane():
     print("\n".join(map(str, result)))
 
 
+# Lisa's Workbook
+def lisas_workbook():
+    # Input
+    n, k = map(int, input().rstrip().split())
+    arr = list(map(int, input().rstrip().split()))
+
+    # Function
+    p = 0
+    special_problems = 0
+    for i in range(n):
+        pages_in_chapter = math.ceil(arr[i] / k)
+        for j in range(1, pages_in_chapter + 1):
+            if (j * k - k + 1) <= p + j <= (j * k if j * k < arr[i] else arr[i]):
+                special_problems += 1
+        p += pages_in_chapter
+    print(special_problems)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -960,4 +978,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-service_lane()
+lisas_workbook()
