@@ -922,6 +922,19 @@ def lisas_workbook():
     print(special_problems)
 
 
+# Flatland Space Stations
+def flatland_space_stations():
+    # Input
+    n, m = map(int, input().rstrip().split())
+    c = list(map(int, input().rstrip().split()))
+
+    # Function
+    c = sorted(c)
+    result = max([(c[i + 1] - c[i]) // 2 for i in range(m - 1)]) if m > 1 else 0
+    result = max(result, c[0], n - 1 - c[m - 1])
+    print(result)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -978,4 +991,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-lisas_workbook()
+flatland_space_stations()
