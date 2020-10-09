@@ -935,6 +935,21 @@ def flatland_space_stations():
     print(result)
 
 
+# Fair Rations
+def fair_rations():
+    # Input
+    n = int(input())
+    b = list(map(int, input().rstrip().split()))
+
+    # Function
+    odd = [i for i in range(n) if b[i] % 2]
+    if len(odd) % 2 == 0:
+        result = sum([(odd[i + 1] - odd[i]) * 2 for i in range(0, len(odd), 2)])
+    else:
+        result = "NO"
+    print(result)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -991,4 +1006,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-flatland_space_stations()
+fair_rations()
