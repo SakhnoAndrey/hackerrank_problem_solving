@@ -950,6 +950,24 @@ def fair_rations():
     print(result)
 
 
+# Cavity Map
+def cavity_map():
+    # Input
+    n = int(input())
+    grid = []
+    for _ in range(n):
+        grid.append(input())
+
+    # Funstion
+    for i in range(1, n - 1, 1):
+        for j in range(1, n - 1, 1):
+            if grid[i][j] > max(
+                grid[i][j - 1], grid[i][j + 1], grid[i - 1][j], grid[i + 1][j]
+            ):
+                grid[i] = grid[i][:j] + "X" + grid[i][j + 1 :]
+    print("\n".join(grid))
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -1006,4 +1024,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-fair_rations()
+cavity_map()
