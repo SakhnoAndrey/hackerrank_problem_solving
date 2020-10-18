@@ -1021,6 +1021,16 @@ def happy_ladybugs():
         print(result)
 
 
+# Strange Counter
+def strange_counter():
+    # Input
+    t = int(input())
+
+    # Function
+    result = 3 * 2 ** math.ceil(math.log2(t / 3 + 1)) - t - 2
+    print(result)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -1077,4 +1087,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-happy_ladybugs()
+strange_counter()
