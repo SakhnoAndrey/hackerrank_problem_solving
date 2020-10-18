@@ -1002,6 +1002,25 @@ def grid_search():
         print(result)
 
 
+# Happy Ladybugs
+def happy_ladybugs():
+    # Input
+    g = int(input())
+    for _ in range(g):
+        n = int(input())
+        b = input()
+        # Function
+        result = "YES"
+        for i in set(b):
+            if i != "_" and b.count(i) == 1:
+                result = "NO"
+        if "_" not in b:
+            for i in range(1, len(b) - 1):
+                if b[i - 1] != b[i] and b[i] != b[i + 1]:
+                    result = "NO"
+        print(result)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -1058,4 +1077,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-grid_search()
+happy_ladybugs()
