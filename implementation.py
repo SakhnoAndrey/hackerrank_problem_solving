@@ -968,6 +968,19 @@ def cavity_map():
     print("\n".join(grid))
 
 
+# Manasa and Stones
+def manasa_stones():
+    # Input
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        a = int(input())
+        b = int(input())
+        # Function
+        result = sorted(set([(a * (n - 1 - i) + b * i) for i in range(n)]))
+        print(result)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -1024,4 +1037,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-cavity_map()
+manasa_stones()
