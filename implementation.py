@@ -981,6 +981,27 @@ def manasa_stones():
         print(result)
 
 
+# The Grid Search
+def grid_search():
+    # Input
+    t = int(input())
+    for _ in range(t):
+        R, C = map(int, input().rstrip().split())
+        G = [input() for _ in range(R)]
+        r, c = map(int, input().rstrip().split())
+        P = [input() for _ in range(r)]
+        # Function
+        result = "NO"
+        sp = "".join(P)
+        for i in range(len(G) - len(P) + 1):
+            for j in range(len(G[i]) - len(P[0]) + 1):
+                if G[i][j : j + len(P[0])] == P[0]:
+                    x = "".join([G[i + k][j : j + len(P[0])] for k in range(len(P))])
+                    if x == "".join(P):
+                        result = "YES"
+        print(result)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -1037,4 +1058,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-manasa_stones()
+grid_search()
