@@ -1031,6 +1031,27 @@ def strange_counter():
     print(result)
 
 
+# 3D surface area
+def surface_3d_area():
+    # Input
+    h, w = map(int, input().rstrip().split())
+    arr = [list(map(int, input().rstrip().split())) for _ in range(h)]
+
+    # Function
+    area = 2 * len(arr) * len(arr[0])
+    for i in range(len(arr)):
+        for j in range(len(arr[0])):
+            area += arr[i][j] if i == 0 else max(0, arr[i][j] - arr[i - 1][j])
+            area += (
+                arr[i][j] if i == len(arr) - 1 else max(0, arr[i][j] - arr[i + 1][j])
+            )
+            area += arr[i][j] if j == 0 else max(0, arr[i][j] - arr[i][j - 1])
+            area += (
+                arr[i][j] if j == len(arr[0]) - 1 else max(0, arr[i][j] - arr[i][j + 1])
+            )
+    print(area)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
     # Inputhac
@@ -1087,4 +1108,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-strange_counter()
+surface_3d_area()
