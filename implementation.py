@@ -1052,9 +1052,30 @@ def surface_3d_area():
     print(area)
 
 
+# Absolute Permutation
+def absolute_permutation():
+    # Input
+    t = int(input())
+    for _ in range(t):
+        n, k = map(int, input().rstrip().split())
+        # Function
+        if k == 0:
+            perm = list(range(1, n + 1))
+        elif (n / k) % 2 != 0:
+            perm = ["-1"]
+        else:
+            add = True
+            perm = []
+            for i in range(1, n + 1):
+                perm.append((i + k) if add else (i - k))
+                if i % k == 0:
+                    add = not add
+        print(*perm)
+
+
 # Matrix layer rotation
 def matrix_layer_rotation():
-    # Inputhac
+    # Input
     m, n, r = map(int, input().rstrip().split())
     matrix = []
     for _ in range(m):
@@ -1108,4 +1129,4 @@ def matrix_layer_rotation():
         print(" ".join(map(str, elem)))
 
 
-surface_3d_area()
+absolute_permutation()
